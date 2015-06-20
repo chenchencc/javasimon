@@ -26,7 +26,7 @@ dependencies {
 	compile libs.h2
 	compile libs.gson
 	compile 'commons-dbcp:commons-dbcp:1.4'
-	compile project(':jdbc41')
+	compile project(':jdbc42')
 	compile project(':javaee')
 	compile project(':console-embed')
 

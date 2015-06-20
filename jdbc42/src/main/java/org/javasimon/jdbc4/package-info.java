@@ -1,5 +1,5 @@
 /**
- * Simon JDBC 4.1 (Java SE 7) Proxy Driver for monitoring JDBC drivers through the Java Simon API.
+ * Simon JDBC 4.2 (Java SE 8) Proxy Driver for monitoring JDBC drivers through the Java Simon API.
  * <p>
  * Main goal of monitoring the JDBC driver through the Simon JDBC Proxy Driver is to gain data
  * about so-called monitored entities of the JDBC driver, which could provide reasonable information
