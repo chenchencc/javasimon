@@ -1,11 +1,5 @@
 package org.javasimon;
 
-import org.javasimon.callback.Callback;
-import org.javasimon.callback.CompositeCallback;
-import org.javasimon.callback.CompositeCallbackImpl;
-import org.javasimon.clock.SimonClock;
-import org.javasimon.utils.SimonUtils;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -13,6 +7,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.javasimon.callback.Callback;
+import org.javasimon.callback.CompositeCallback;
+import org.javasimon.callback.CompositeCallbackImpl;
+import org.javasimon.clock.SimonClock;
+import org.javasimon.utils.SimonUtils;
 
 /**
  * Implements fully functional {@link Manager} in the enabled state. Does not support
@@ -112,7 +112,7 @@ public final class EnabledManager implements Manager {
 	 * set up with {@link Callback#onSimonCreated(Simon)}. ConcurrentHashMap still works fine for
 	 * listing Simons, etc.
 	 */
-	private synchronized Simon getOrCreateSimon(String name, Class<? extends AbstractSimon> simonClass) {
+	private Simon getOrCreateSimon(String name, Class<? extends AbstractSimon> simonClass) {
 		if (name == null) {
 			// create an "anonymous" Simon - Manager does not care about it anymore
 			return instantiateSimon(null, simonClass);
@@ -123,13 +123,21 @@ public final class EnabledManager implements Manager {
 		AbstractSimon simon = allSimons.get(name);
 		if (simon != null && simonClass.isInstance(simon)) {
 			return simon;
-		} else if (simon == null) {
+		} else if (simon != null && !(simon instanceof UnknownSimon)) {
+			throw new SimonException("Simon named '" + name + "' already exists and its type is '" +
+				simon.getClass().getName() + "' while requested type is '" + simonClass.getName() + "'.");
+		} else {
+			return createSimon(name, simonClass);
+		}
+	}
+
+	private synchronized Simon createSimon(String name, Class<? extends AbstractSimon> simonClass) {
+		AbstractSimon simon = allSimons.get(name);
+		if (simon == null) {
 			SimonUtils.validateSimonName(name);
 			simon = newSimon(name, simonClass);
 		} else if (simon instanceof UnknownSimon) {
 			simon = replaceUnknownSimon(simon, simonClass);
-		} else {
-			throw new SimonException("Simon named '" + name + "' already exists and its type is '" + simon.getClass().getName() + "' while requested type is '" + simonClass.getName() + "'.");
 		}
 		callback.onSimonCreated(simon);
 		return simon;
