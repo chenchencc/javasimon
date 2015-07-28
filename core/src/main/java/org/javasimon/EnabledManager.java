@@ -107,11 +107,6 @@ public final class EnabledManager implements Manager {
 		return simons;
 	}
 
-	/**
-	 * Even with ConcurrentHashMap we want to synchronize here, so newly created Simons can be fully
-	 * set up with {@link Callback#onSimonCreated(Simon)}. ConcurrentHashMap still works fine for
-	 * listing Simons, etc.
-	 */
 	private Simon getOrCreateSimon(String name, Class<? extends AbstractSimon> simonClass) {
 		if (name == null) {
 			// create an "anonymous" Simon - Manager does not care about it anymore
@@ -131,6 +126,11 @@ public final class EnabledManager implements Manager {
 		}
 	}
 
+	/**
+	 * Even with ConcurrentHashMap we want to synchronize here, so newly created Simons can be fully
+	 * set up with {@link Callback#onSimonCreated(Simon)}. ConcurrentHashMap still works fine for
+	 * listing Simons, etc.
+	 */
 	private synchronized Simon createSimon(String name, Class<? extends AbstractSimon> simonClass) {
 		AbstractSimon simon = allSimons.get(name);
 		if (simon == null) {
