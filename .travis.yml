@@ -11,4 +11,5 @@ jdk: oraclejdk7
 
 branches:
   only:
-    - master
+    - version-4
+#    - master
