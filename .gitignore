@@ -1,6 +1,9 @@
 # Ignore Maven output files
-*/target/*
+*/target/
+.gradle
 
 # Ignore IDEA files
-.idea/*
+.idea/
 *.iml
+*.iws
+*.ipr

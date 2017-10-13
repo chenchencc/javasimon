@@ -1,32 +1,47 @@
-// Gradle build is actively used for Travis CI build (from GitHub)
-// Maven is still used for release though
 plugins {
-	id 'idea'
-	id 'maven'
-// See notes in .travis.yml
-//	id 'jacoco'
-//	id 'com.github.kt3k.coveralls' version '2.6.3'
+	id 'java'
 }
-
-//jacocoTestReport {
-//	reports {
-//		xml.enabled = true // coveralls plugin depends on xml format report
-//		html.enabled = true
-//	}
-//}
 
 group = 'org.javasimon'
 
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
+
 repositories {
-	mavenCentral()
+	jcenter()
 }
+
+ext {
+	testNgVersion = '6.10'
+	assertjVersion = '3.8.0'
+	spockVersion = '1.1-groovy-2.4'
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'groovy'
+
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		testCompile "org.testng:testng:$testNgVersion"
+		testCompile "org.assertj:assertj-core:$assertjVersion"
+		testCompile "org.spockframework:spock-core:$spockVersion"
+		testCompile "org.codehaus.groovy:groovy-all:2.4.12"
+	}
+}
+
+/*
+ORIGINAL Java Simon 4.2 build
 
 ext.springVersion = '3.2.0.RELEASE'
 ext.slf4jVersion = '1.7.2'
 ext.javaEeVersion = '6.0'
 ext.mockitoVersion = '1.9.0'
 ext.h2Version = '1.4.190'
-ext.testNgVersion = '6.5.2'
+ext.testNgVersion = '6.10'
 ext.gsonVersion = '2.2.4'
 
 ext.libs = [
@@ -72,3 +87,4 @@ subprojects {
 		useTestNG()
 	}
 }
+*/

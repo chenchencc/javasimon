@@ -1,5 +1,14 @@
-archivesBaseName = 'javasimon-core'
+plugins {
+	id 'java'
+}
 
-dependencies {
-	compile 'org.slf4j:slf4j-api:1.7.2'
+ext.moduleName = 'org.javasimon.core'
+compileJava {
+	inputs.property("moduleName", moduleName)
+	doFirst {
+		options.compilerArgs = [
+			'--module-path', classpath.asPath, '-Xlint:unchecked', '-Xlint:deprecation'
+		]
+		classpath = files()
+	}
 }
