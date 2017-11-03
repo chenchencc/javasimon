@@ -1,5 +1,7 @@
 package org.javasimon.base
 
+import org.javasimon.base.counter.Counter
+import org.javasimon.base.counter.CounterFactory
 import spock.lang.Specification
 
 class FlatSimonManagerSpec extends Specification {

@@ -1,6 +1,10 @@
 # Ignore Maven output files
 */target/
+
+# Gradle ignores
 .gradle
+/build/
+*/build/
 
 # Ignore IDEA files
 .idea/
