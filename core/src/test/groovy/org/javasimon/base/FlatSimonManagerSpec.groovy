@@ -1,10 +1,10 @@
 package org.javasimon.base
 
-import spock.lang.Specification;
+import spock.lang.Specification
 
 class FlatSimonManagerSpec extends Specification {
 
-	def "newly created manager has no simons"() {
+	def "Newly created manager has no Simons."() {
 		when:
 		def manager = new FlatSimonManager()
 
@@ -13,7 +13,7 @@ class FlatSimonManagerSpec extends Specification {
 	}
 
 
-	def "after adding a simon its name is returned by simonNames"() {
+	def "After adding a Simon its name is returned by simonNames."() {
 		given:
 		def manager = new FlatSimonManager<String>()
 			.registerSimonType(new CounterFactory<>())

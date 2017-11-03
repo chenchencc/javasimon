@@ -17,7 +17,7 @@ public class FlatSimonManager<N> implements SimonManager<N> {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public <S extends Simon<N>> S simon(N name, Class<S> simonType) {
+	public final <S extends Simon<N>> S simon(N name, Class<S> simonType) {
 		S simon = (S) simons.get(name);
 		if (simon == null) {
 			synchronized (this) {
@@ -36,12 +36,12 @@ public class FlatSimonManager<N> implements SimonManager<N> {
 	}
 
 	@Override
-	public Collection<N> simonNames() {
+	public final Collection<N> simonNames() {
 		return simons.keySet();
 	}
 
 	@Override
-	public synchronized <S extends Simon<N>> SimonManager<N> registerSimonType(
+	public final synchronized <S extends Simon<N>> SimonManager<N> registerSimonType(
 		SimonFactory<N, S> simonFactory)
 	{
 		factories.put(simonFactory.simonType(), simonFactory);
