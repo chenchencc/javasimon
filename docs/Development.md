@@ -52,7 +52,7 @@ dialogue ticked.
 
 Then, version should be set to the next snapshot, for example:
 ```
-call mvn versions:set -DnewVersion=4.1.1-SNAPSHOT
+call mvn versions:set -DnewVersion=5.0.0-SNAPSHOT
 call mvn versions:commit
 ```
 

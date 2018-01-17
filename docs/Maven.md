@@ -5,7 +5,7 @@ Java Simon is now fully Maven 3.x compliant. Artifacts for Maven users are hoste
 ```
         <properties>
 ...
-                <javasimon.version>4.1.0</javasimon.version>
+                <javasimon.version>5.0.0</javasimon.version>
 ...
         </properties>
 
@@ -19,7 +19,7 @@ Java Simon is now fully Maven 3.x compliant. Artifacts for Maven users are hoste
                 <!-- This one allows monitoring JDBC calls (proxy driver) -->
                 <dependency>
                         <groupId>org.javasimon</groupId>
-                        <artifactId>javasimon-jdbc41</artifactId>
+                        <artifactId>javasimon-jdbc42</artifactId>
                         <version>${javasimon.version}</version>
                 </dependency>
                 <!-- JavaEE support, servlet filter, EJB/CDI interceptor -->
@@ -50,8 +50,9 @@ Java Simon is bound to specific Java/JDBC major version (because of JDBC driver 
 version (master branch) requires Java SE 7. You can still use 3.5 branch on Java SE. Here is the table
 of artifact names (group is always `org.javasimon`) based on JDK you need to use:
 
-| Artifact | Java 6/JDBC 4.0 | Java 7/JDBC 4.1 |
+| Artifact | Java 6/JDBC 4.0 | Java 7/JDBC 4.1 | Java 8/JDBC 4.2 |
 | ------------- |:-------------:| :-----|
-| `javasimon-core`<br>(and all `javasimon-*` not mentioned further) | 3.5.x | 4.x |
-| `javasimon-jdbc4` | 3.5.x | N/A<br>(may work if no new methods are used, but doesn't make sense) |
-| `javasimon-jdbc41` | N/A<br>(fails on class version) | 4.x |
+| `javasimon-core`<br>(and all `javasimon-*` not mentioned further) | 3.5.x | 4.x | 5.x |
+| `javasimon-jdbc4` | 3.5.x | N/A<br>(may work if no new methods are used, but doesn't make sense) | N/A |
+| `javasimon-jdbc41` | N/A<br>(fails on class version) | 4.x | N/A |
+| `javasimon-jdbc42` | N/A | N/A | 5.x |

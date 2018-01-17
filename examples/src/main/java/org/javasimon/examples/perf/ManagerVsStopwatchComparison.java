@@ -33,7 +33,7 @@ public final class ManagerVsStopwatchComparison {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
-		ExampleUtils.fillManagerWithSimons(100000);
+		fillupManager();
 		StopwatchSample[] results = BenchmarkUtils.run(2, 5,
 			new BenchmarkUtils.Task("getStopwatch") {
 				@Override
@@ -70,10 +70,19 @@ public final class ManagerVsStopwatchComparison {
 						SimonManager.getStopwatch(NAME).start().stop();
 					}
 				}
+
+				@Override
+				public void cleanup() {
+					fillupManager();
+				}
 			}
 		);
 
 		System.out.println("\nGoogle Chart avg:\n" +
 			GoogleChartImageGenerator.barChart("10M-loop duration", results));
+	}
+
+	private static void fillupManager() {
+		ExampleUtils.fillManagerWithSimons(100000);
 	}
 }

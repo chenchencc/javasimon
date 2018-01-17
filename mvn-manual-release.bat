@@ -20,6 +20,6 @@ zip -j dist.zip console-embed\target\javasimon-console-embed-%VERSION%.jar ^
   core\target\javasimon-core-%VERSION%.jar ^
   examples\target\javasimon-examples-%VERSION%.jar ^
   javaee\target\javasimon-javaee-%VERSION%.jar ^
-  jdbc41\target\javasimon-jdbc41-%VERSION%.jar ^
+  jdbc42\target\javasimon-jdbc42-%VERSION%.jar ^
   spring\target\javasimon-spring-%VERSION%.jar ^
   target\javasimon*.jar

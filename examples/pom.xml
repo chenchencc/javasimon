@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.javasimon</groupId>
-			<artifactId>javasimon-jdbc41</artifactId>
+			<artifactId>javasimon-jdbc42</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

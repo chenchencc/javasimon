@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
- * Simon JDBC 4.1 Proxy Driver (Java SE 7).
+ * Simon JDBC 4.2 Proxy Driver (Java SE 8).
  * <p>
  * An application should not use this class directly. The application (if standalone)
  * should use {@link java.sql.DriverManager} only. For example:

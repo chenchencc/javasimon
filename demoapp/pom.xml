@@ -19,7 +19,7 @@
 		<glassfish.javax-impl.version>2.2</glassfish.javax-impl.version>
 		<glassfish.jstl.version>1.2</glassfish.jstl.version>
 
-		<jackson.version>2.5.4</jackson.version>
+		<jackson.version>1.9.10</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -28,11 +28,7 @@
 			<artifactId>javasimon-javaee</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.javasimon</groupId>
-			<artifactId>javasimon-spring</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.javasimon</groupId>
 			<artifactId>javasimon-console-embed</artifactId>
@@ -84,11 +80,6 @@
 			<artifactId>spring-core</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<scope>compile</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -138,12 +129,12 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
+			<version>2.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
+			<version>2.0.4</version>
 		</dependency>
 
 		<dependency>

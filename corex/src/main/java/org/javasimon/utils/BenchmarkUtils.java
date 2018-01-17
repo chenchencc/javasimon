@@ -109,6 +109,7 @@ public class BenchmarkUtils {
 				System.out.println(split.presentRunningFor());
 				MANAGER.getStopwatch(stopwatchName).addSplit(split);
 			}
+			cleanup();
 		}
 
 		/**
@@ -117,5 +118,7 @@ public class BenchmarkUtils {
 		 * @throws Exception any exception can be thrown here
 		 */
 		public abstract void perform() throws Exception;
+
+		public void cleanup() {}
 	}
 }

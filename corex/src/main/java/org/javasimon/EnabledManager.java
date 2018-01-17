@@ -1,11 +1,5 @@
 package org.javasimon;
 
-import org.javasimon.callback.Callback;
-import org.javasimon.callback.CompositeCallback;
-import org.javasimon.callback.CompositeCallbackImpl;
-import org.javasimon.clock.SimonClock;
-import org.javasimon.utils.SimonUtils;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -13,6 +7,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.javasimon.callback.Callback;
+import org.javasimon.callback.CompositeCallback;
+import org.javasimon.callback.CompositeCallbackImpl;
+import org.javasimon.clock.SimonClock;
+import org.javasimon.utils.SimonUtils;
 
 /**
  * Implements fully functional {@link Manager} in the enabled state. Does not support
