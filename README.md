@@ -8,8 +8,8 @@ Java Simon is a simple monitoring API that allows you to follow and better under
 Monitors (familiarly called Simons) are placed directly into your code and you can choose whether you
 want to count something or measure time/duration.
 
-* Current version: 4.1.3 (May 2017, requires Java 7) [Javadoc](http://virgo47.github.io/javasimon/api/4.1/)
-* Version for Java 6: 3.5.2 (October 2014) [Javadoc](http://virgo47.github.io/javasimon/api/3.5/)
+* Current version: 4.1.3 (May 2017, requires Java 7) [Javadoc](http://virgo47.github.io/docs/javasimon/api/4.1/)
+* Version for Java 6: 3.5.2 (October 2014) [Javadoc](https://virgo47.github.io/docs/javasimon/api/3.5/)
 * [History of releases](docs/History.md)
 * License: [New BSD License](license.txt)
 
@@ -65,10 +65,9 @@ or our Javadoc, that actually contains something on the overview page (under pac
 
 Project is [hosted on GitHub](https://github.com/virgo47/javasimon/), these are related pages:
 
-* Our homepage on Google+: http://www.javasimon.org or https://plus.google.com/b/115141838919870730025/115141838919870730025
-* Javadoc API: http://virgo47.github.io/javasimon/api/4.0/
+* Javadoc API: http://virgo47.github.io/docs/javasimon/api/4.1/
 * Ohloh page: http://www.ohloh.net/p/javasimon
-* Former project page on Google Code: http://code.google.com/p/javasimon/
+* JavaSimon on Google+: https://plus.google.com/b/115141838919870730025/115141838919870730025
 
 ## Why Java Simon?
 
