@@ -20,6 +20,14 @@ and further improved Java EE support. Embeddable web-console was added in versio
 sampling instead of reset.
 
 
+## 4.1.4 - 2018-03-18
+
+Minor bugfix release mostly around logging and Console JSON stringification:
+
+* Fixed [Hid unnecessary logging](https://github.com/virgo47/javasimon/pull/25)
+* Fixed [fixed boolean getters recognition, improved performance](https://github.com/virgo47/javasimon/pull/24)
+* Fixed [Fixed json stringifier](https://github.com/virgo47/javasimon/pull/22)
+
 ## 4.1.3 - 2017-05-07
 
 * Fixed [AbstractSimon is not thread-safe](https://github.com/virgo47/javasimon/issues/20)
